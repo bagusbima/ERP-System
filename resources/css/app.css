@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /**
+     * Material 3 surface ladder (neutral tint, cool blue-grey).
+     * background -> surface, card -> surface-container-lowest,
+     * secondary -> surface-container-low, muted -> surface-container,
+     * accent -> surface-container-high, muted-foreground -> on-surface-variant.
+     */
+    --color-background: #f8f9ff;
+    --color-foreground: #0b1c30;
+
+    --color-card: #ffffff;
+    --color-card-foreground: #0b1c30;
+
+    --color-popover: #ffffff;
+    --color-popover-foreground: #0b1c30;
+
+    /* primary-container (#131b2e) acts as the app accent: buttons, active nav, chart bars. */
+    --color-primary: #131b2e;
+    --color-primary-foreground: #ffffff;
+
+    --color-secondary: #dce9ff;
+    --color-secondary-foreground: #0b1c30;
+
+    --color-muted: #e5eeff;
+    --color-muted-foreground: #45464d;
+
+    --color-accent: #d3e4fe;
+    --color-accent-foreground: #0b1c30;
+
+    /* error */
+    --color-destructive: #ba1a1a;
+    --color-destructive-foreground: #ffffff;
+
+    --color-border: #c6c6cd;
+    --color-input: #c6c6cd;
+    --color-ring: #131b2e;
+
+    /* sidebar: surface-container-low with a primary-container active state */
+    --color-sidebar: #eff4ff;
+    --color-sidebar-foreground: #45464d;
+    --color-sidebar-accent: #131b2e;
+    --color-sidebar-accent-foreground: #ffffff;
+
+    /* semantic status palette used by badges, banners and row highlights */
+    --color-success: #047857;
+    --color-success-surface: #ecfdf5;
+    --color-success-border: #a7f3d0;
+
+    --color-warning: #92400e;
+    --color-warning-surface: #fffbeb;
+    --color-warning-border: #fde68a;
+
+    --color-danger: #be123c;
+    --color-danger-surface: #fff1f2;
+    --color-danger-border: #fecdd3;
+
+    /* tighter corners: 4px controls, 8px surfaces */
+    --radius-sm: 0.125rem;
+    --radius-md: 0.25rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+}
+
+@layer base {
+    /**
+     * Tailwind v4 preflight leaves `border: 0 solid` without a colour, so a bare
+     * `border` would inherit `currentColor` (#0b1c30) instead of the M3
+     * outline-variant token. Utilities such as `border-border/60` or
+     * `border-danger-border` still win because they live in a later layer.
+     */
+    *,
+    ::before,
+    ::after,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-border);
+    }
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+}
