@@ -463,7 +463,6 @@ Empat lapis penjagaan yang sama-sama mengecek kunci yang sama — tidak ada pint
 | Warna & token tema | `resources/css/app.css` |
 | Seeder demo | `database/seeders/` |
 
-Versi alur tanpa diagram: [`FLOW.md`](FLOW.md) (Mermaid) dan [`flow2.md`](flow2.md) (tabel + ASCII).
 
 ---
 
@@ -478,7 +477,3 @@ npm run build                       # bundel Vite
 ```
 
 ---
-
-## Kredit
-
-Dibangun di atas [Laravel](https://laravel.com) — framework PHP dengan sintaks yang ekspresif dan elegan. Laravel berlisensi [MIT](https://opensource.org/licenses/MIT).
